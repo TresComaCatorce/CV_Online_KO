@@ -1,17 +1,24 @@
 @ColorGris1: #1E1E1E;
 @ColorGris2: #252526;
 @ColorGris3: #333333;
-@ColorNode1: rgb(5, 121, 3);
-@ColorNode2: rgb(54, 172, 43);
+@ColorNode1: rgb(1, 63, 0);
+@ColorNode2: rgb(118, 211, 122);
 @ColorFuente1: #FFFFF9;
 @HeaderHeightLarge: 350px;
 @HeaderHeightSmall: 290px;
 @ProfilePicSizeLarge: 300px;
 @ProfilePicSizeSmall: 200px;
+@ColorLinkedin: #0077B5;
+@ColorGithub: #24292E;
+@ColorStackOverFlow: #F48024;
 
 *{
 	color: @ColorFuente1;
 	font-family: 'Red Hat Display', sans-serif;
+}
+
+html{
+	scroll-behavior: smooth;
 }
 
 .cursor-pointer{
@@ -24,6 +31,16 @@
 
 .m-0{
 	margin: 0 !important;
+}
+
+.linkedin-bg-color{
+	background-color: @ColorLinkedin !important;
+}
+.github-bg-color{
+	background-color: @ColorGithub !important;
+}
+.stackoverflow-bg-color{
+	background-color: @ColorStackOverFlow !important;
 }
 
 .parallax
@@ -46,55 +63,66 @@
 	height: 950px;
 }
 
-#cbf-profile-pic{
-	transform: scale(0);
-	transition: .3s;
-
-	&.scaled{
-		transform: scale(1);
-	}
-
-	width: @ProfilePicSizeLarge;
-	border: 3px solid rgb(78, 78, 78);
-
-	@media(max-width: 992px)
-	{
-		width: @ProfilePicSizeSmall;
-	}
+#cbf-parallax-2{
+	height: 350px;
 }
 
 #cbf-page{
 
 	height: 9000px;
 
-	#cbf-header{
+	#cbf-parallax-1{
+		height: 950px;
+	}
+
+	#cbf-section-1{
+
+		transition: .3s;
+		background-image: linear-gradient(to bottom right, @ColorNode2, @ColorNode1);
+
+		#cbf-background-1{
+			position: absolute;
+			top: -25%;
+			left: -30%;
+			width: 120%;
+			height: 180%;
+			background-image: linear-gradient(to bottom right, @ColorGris1, @ColorGris3);
+			transform: rotate(-15deg);
+		}
+
+		*{
+			position: relative;
+		}
+
 		.left-pane{
-			background-color: @ColorGris3;
 			height: @HeaderHeightLarge;
+			position: relative;
+			overflow: hidden;
+			
+
+			.fab{
+				font-size: 2rem;
+			}
 		}
 
 		.right-pane{
-			.cbf-triangle{
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 20%;
 
-				div
+			#cbf-profile-pic{
+				transition: .3s;
+			
+				width: @ProfilePicSizeLarge;
+				border: 3px solid rgb(78, 78, 78);
+			
+				@media(max-width: 992px)
 				{
-					width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: @HeaderHeightLarge 0 0 90px;
-					border-color: transparent transparent transparent @ColorGris3;
+					width: @ProfilePicSizeSmall;
 				}
 			}
 
 			position: relative;
 			height: @HeaderHeightLarge;
 			justify-content: center;
-			background-image: linear-gradient(to bottom right, @ColorNode2, @ColorNode1);
+			
 
 			@media(max-width: 992px)
 			{
@@ -109,5 +137,42 @@
 
 	#cbf-footer{
 
+	}
+
+	.animated
+	{
+		*{
+			transition: .5s;
+		}
+		&.hidden{
+			.transform-0{
+				transform: scale(0);
+			}
+			.transform{
+				transform: scale(0.75);
+			}
+			.right-1{
+				margin-left: -500px;
+			}
+			.right-2{
+				margin-left: -1000px;
+			}
+			.right-3{
+				margin-left: -1500px;
+			}
+			.right-4{
+				margin-left: -2000px;
+			}
+			.right-5{
+				margin-left: -2500px;
+			}
+			.right-6{
+				margin-left: -3000px;
+			}
+			.right-7{
+				margin-left: -3500px;
+			}
+		}
+		
 	}
 }

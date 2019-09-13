@@ -2,6 +2,9 @@
   color: #FFFFF9;
   font-family: 'Red Hat Display', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -10,6 +13,15 @@
 }
 .m-0 {
   margin: 0 !important;
+}
+.linkedin-bg-color {
+  background-color: #0077B5 !important;
+}
+.github-bg-color {
+  background-color: #24292E !important;
+}
+.stackoverflow-bg-color {
+  background-color: #F48024 !important;
 }
 .parallax {
   display: flex;
@@ -26,52 +38,89 @@
 #cbf-parallax-1 {
   height: 950px;
 }
-#cbf-profile-pic {
-  transform: scale(0);
-  transition: .3s;
-  width: 300px;
-  border: 3px solid #4e4e4e;
-}
-#cbf-profile-pic.scaled {
-  transform: scale(1);
-}
-@media (max-width: 992px) {
-  #cbf-profile-pic {
-    width: 200px;
-  }
+#cbf-parallax-2 {
+  height: 350px;
 }
 #cbf-page {
   height: 9000px;
 }
-#cbf-page #cbf-header .left-pane {
-  background-color: #333333;
-  height: 350px;
+#cbf-page #cbf-parallax-1 {
+  height: 950px;
 }
-#cbf-page #cbf-header .right-pane {
+#cbf-page #cbf-section-1 {
+  transition: .3s;
+  background-image: linear-gradient(to bottom right, #76d37a, #013f00);
+}
+#cbf-page #cbf-section-1 #cbf-background-1 {
+  position: absolute;
+  top: -25%;
+  left: -30%;
+  width: 120%;
+  height: 180%;
+  background-image: linear-gradient(to bottom right, #1E1E1E, #333333);
+  transform: rotate(-15deg);
+}
+#cbf-page #cbf-section-1 * {
+  position: relative;
+}
+#cbf-page #cbf-section-1 .left-pane {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+#cbf-page #cbf-section-1 .left-pane .fab {
+  font-size: 2rem;
+}
+#cbf-page #cbf-section-1 .right-pane {
   position: relative;
   height: 350px;
   justify-content: center;
-  background-image: linear-gradient(to bottom right, #36ac2b, #057903);
 }
-#cbf-page #cbf-header .right-pane .cbf-triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 20%;
-}
-#cbf-page #cbf-header .right-pane .cbf-triangle div {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 350px 0 0 90px;
-  border-color: transparent transparent transparent #333333;
+#cbf-page #cbf-section-1 .right-pane #cbf-profile-pic {
+  transition: .3s;
+  width: 300px;
+  border: 3px solid #4e4e4e;
 }
 @media (max-width: 992px) {
-  #cbf-page #cbf-header .right-pane {
+  #cbf-page #cbf-section-1 .right-pane #cbf-profile-pic {
+    width: 200px;
+  }
+}
+@media (max-width: 992px) {
+  #cbf-page #cbf-section-1 .right-pane {
     height: 290px;
   }
 }
 #cbf-page #cbf-body {
   background-image: linear-gradient(to bottom right, #252526, #333333);
+}
+#cbf-page .animated * {
+  transition: .5s;
+}
+#cbf-page .animated.hidden .transform-0 {
+  transform: scale(0);
+}
+#cbf-page .animated.hidden .transform {
+  transform: scale(0.75);
+}
+#cbf-page .animated.hidden .right-1 {
+  margin-left: -500px;
+}
+#cbf-page .animated.hidden .right-2 {
+  margin-left: -1000px;
+}
+#cbf-page .animated.hidden .right-3 {
+  margin-left: -1500px;
+}
+#cbf-page .animated.hidden .right-4 {
+  margin-left: -2000px;
+}
+#cbf-page .animated.hidden .right-5 {
+  margin-left: -2500px;
+}
+#cbf-page .animated.hidden .right-6 {
+  margin-left: -3000px;
+}
+#cbf-page .animated.hidden .right-7 {
+  margin-left: -3500px;
 }
