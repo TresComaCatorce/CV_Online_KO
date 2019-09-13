@@ -1,0 +1,113 @@
+@ColorGris1: #1E1E1E;
+@ColorGris2: #252526;
+@ColorGris3: #333333;
+@ColorNode1: rgb(5, 121, 3);
+@ColorNode2: rgb(54, 172, 43);
+@ColorFuente1: #FFFFF9;
+@HeaderHeightLarge: 350px;
+@HeaderHeightSmall: 290px;
+@ProfilePicSizeLarge: 300px;
+@ProfilePicSizeSmall: 200px;
+
+*{
+	color: @ColorFuente1;
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.p-0{
+	padding: 0 !important;
+}
+
+.m-0{
+	margin: 0 !important;
+}
+
+.parallax
+{
+	display: flex;
+	justify-content: center;
+
+	div
+	{
+		position: absolute;
+		z-index: 99;
+
+		h1, h3{
+			color: @ColorGris1;
+		}
+	}
+}
+
+#cbf-parallax-1{
+	height: 950px;
+}
+
+#cbf-profile-pic{
+	transform: scale(0);
+	transition: .3s;
+
+	&.scaled{
+		transform: scale(1);
+	}
+
+	width: @ProfilePicSizeLarge;
+	border: 3px solid rgb(78, 78, 78);
+
+	@media(max-width: 992px)
+	{
+		width: @ProfilePicSizeSmall;
+	}
+}
+
+#cbf-page{
+
+	height: 9000px;
+
+	#cbf-header{
+		.left-pane{
+			background-color: @ColorGris3;
+			height: @HeaderHeightLarge;
+		}
+
+		.right-pane{
+			.cbf-triangle{
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 20%;
+
+				div
+				{
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: @HeaderHeightLarge 0 0 90px;
+					border-color: transparent transparent transparent @ColorGris3;
+				}
+			}
+
+			position: relative;
+			height: @HeaderHeightLarge;
+			justify-content: center;
+			background-image: linear-gradient(to bottom right, @ColorNode2, @ColorNode1);
+
+			@media(max-width: 992px)
+			{
+				height: @HeaderHeightSmall;
+			}
+		}
+	}
+
+	#cbf-body{
+		background-image: linear-gradient( to bottom right, @ColorGris2, @ColorGris3 );
+	}
+
+	#cbf-footer{
+
+	}
+}
