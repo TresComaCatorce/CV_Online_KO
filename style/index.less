@@ -33,6 +33,23 @@ html{
 	margin: 0 !important;
 }
 
+.col-same-height{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.underline{
+	text-decoration: underline;
+}
+
+.italic{
+	font-style: italic;
+}
+
 .linkedin-bg-color{
 	background-color: @ColorLinkedin !important;
 }
@@ -67,6 +84,12 @@ html{
 	height: 350px;
 }
 
+.logo{
+	max-width: 180px !important;
+	margin: 35px;
+	border: 3px solid @ColorGris3; 
+}
+
 #cbf-page{
 
 	height: 9000px;
@@ -79,11 +102,13 @@ html{
 
 		transition: .3s;
 		background-image: linear-gradient(to bottom right, @ColorNode2, @ColorNode1);
+		position: relative;
+		overflow: hidden;
 
 		#cbf-background-1{
 			position: absolute;
-			top: -25%;
-			left: -30%;
+			top: 10%;
+			left: -70%;
 			width: 120%;
 			height: 180%;
 			background-image: linear-gradient(to bottom right, @ColorGris1, @ColorGris3);
@@ -97,8 +122,6 @@ html{
 		.left-pane{
 			height: @HeaderHeightLarge;
 			position: relative;
-			overflow: hidden;
-			
 
 			.fab{
 				font-size: 2rem;
@@ -131,46 +154,86 @@ html{
 		}
 	}
 
-	#cbf-body{
-		background-image: linear-gradient( to bottom right, @ColorGris2, @ColorGris3 );
-	}
+	#cbf-section-2{
+		transition: .3s;
+		background-image: linear-gradient(to bottom right, @ColorGris3, @ColorGris1);
 
-	#cbf-footer{
+		.left-pane{
+			justify-content: center;
+		}
 
+		.right-pane{
+			display: block;
+
+			*{
+				// transition: 0s;
+			}
+
+			.cbf-tech{
+				i{
+					font-size: 18px;
+					color: @ColorGris3;
+				}
+				span{
+					font-weight: bold;
+					font-size: 15px;
+				}
+			}
+		}
 	}
 
 	.animated
 	{
 		*{
-			transition: .5s;
+			transition: .45s;
 		}
+
+		.no-transition, .no-transition *{
+			transition: unset;
+		}
+
 		&.hidden{
 			.transform-0{
 				transform: scale(0);
 			}
-			.transform{
+			.transform-1{
 				transform: scale(0.75);
 			}
-			.right-1{
-				margin-left: -500px;
+			.transform-2{
+				transform: scale(0.50);
 			}
-			.right-2{
+			.opacity-0{
+				opacity: 0;
+			}
+			.right-1{
 				margin-left: -1000px;
 			}
-			.right-3{
-				margin-left: -1500px;
-			}
-			.right-4{
+			.right-2{
 				margin-left: -2000px;
 			}
-			.right-5{
-				margin-left: -2500px;
-			}
-			.right-6{
+			.right-3{
 				margin-left: -3000px;
 			}
+			.right-4{
+				margin-left: -4000px;
+			}
+			.right-5{
+				margin-left: -5000px;
+			}
+			.right-6{
+				margin-left: -6000px;
+			}
 			.right-7{
-				margin-left: -3500px;
+				margin-left: -7000px;
+			}
+			.right-8{
+				margin-left: -8000px;
+			}
+			.right-9{
+				margin-left: -9000px;
+			}
+			.right-10{
+				margin-left: -10000px;
 			}
 		}
 		
