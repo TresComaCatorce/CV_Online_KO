@@ -1,4 +1,4 @@
-@ColorGris1: #1E1E1E;
+@ColorGris1: #101010;
 @ColorGris2: #252526;
 @ColorGris3: #333333;
 @ColorNode1: rgb(1, 63, 0);
@@ -19,6 +19,7 @@
 
 html{
 	scroll-behavior: smooth;
+	overflow-y: scroll;
 }
 
 .cursor-pointer{
@@ -50,6 +51,10 @@ html{
 	font-style: italic;
 }
 
+.align-center{
+	text-align: center;
+}
+
 .linkedin-bg-color{
 	background-color: @ColorLinkedin !important;
 }
@@ -76,26 +81,22 @@ html{
 	}
 }
 
-#cbf-parallax-1{
-	height: 950px;
-}
-
-#cbf-parallax-2{
-	height: 350px;
-}
-
 .logo{
 	max-width: 180px !important;
 	margin: 35px;
-	border: 3px solid @ColorGris3; 
+	border: 3px solid @ColorGris3;
 }
 
 #cbf-page{
 
-	height: 9000px;
+	// height: 9000px;
 
 	#cbf-parallax-1{
 		height: 950px;
+	}
+	
+	#cbf-parallax-2, #cbf-parallax-3, #cbf-parallax-4, #cbf-parallax-5{
+		height: 350px;
 	}
 
 	#cbf-section-1{
@@ -111,7 +112,8 @@ html{
 			left: -70%;
 			width: 120%;
 			height: 180%;
-			background-image: linear-gradient(to bottom right, @ColorGris1, @ColorGris3);
+			background: radial-gradient(circle, @ColorGris1 15%, @ColorGris3 50%, @ColorGris1 100%);
+		
 			transform: rotate(-15deg);
 		}
 
@@ -154,9 +156,9 @@ html{
 		}
 	}
 
-	#cbf-section-2{
+	#cbf-section-2, #cbf-section-3, #cbf-section-4, #cbf-section-5{
 		transition: .3s;
-		background-image: linear-gradient(to bottom right, @ColorGris3, @ColorGris1);
+		background: radial-gradient(circle, @ColorGris3 50%, @ColorGris1 100%, @ColorGris3 100%);
 
 		.left-pane{
 			justify-content: center;
@@ -164,10 +166,6 @@ html{
 
 		.right-pane{
 			display: block;
-
-			*{
-				// transition: 0s;
-			}
 
 			.cbf-tech{
 				i{
@@ -180,6 +178,15 @@ html{
 				}
 			}
 		}
+	}
+
+	#cbf-section-5{
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
+
+	#cbf-logo-html-css{
+		height: 100px;
 	}
 
 	.animated

@@ -7,7 +7,7 @@ var masterViewModel =
 
 //Comportamiento de la imagen de perfil en el scroll.
 var profilePicScaleOnScroll = () =>{
-	let animatedElementsIds = ["cbf-section-1", "cbf-section-2"];
+	let animatedElementsIds = ["cbf-section-1", "cbf-section-2", "cbf-section-3", "cbf-section-4"];
 
 	animatedElementsIds.forEach( animatedElementId =>{
 		let animatedHtmlElement = document.getElementById(animatedElementId);
